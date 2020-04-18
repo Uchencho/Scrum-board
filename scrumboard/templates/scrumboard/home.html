@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body ng-app="scrumboard.demo">
+    {% verbatim %}
+    <div ng-controller="ScrumboardController">
+        {{ person.name }} is {{ person.age }} years old
+    </div>
+    {% endverbatim %}
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+    <script>
+        (function(){ 
+            'use strict';
+
+            angular.module('scrumboard.demo', [])
+                .controller('ScrumboardController', ['$scope', ScrumboardController]);
+
+            function ScrumboardController($scope) {
+                $scope.person = {
+                    name: "Uchencho",
+                    age: 26
+                };
+            }
+        }());
+    </script>
+</body>
+</html>
